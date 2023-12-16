@@ -1,0 +1,1 @@
+enum ImageStatus { original, edited }

@@ -1,0 +1,28 @@
+import 'package:flutter/material.dart';
+import 'package:social_app/Core/utils/styles.dart';
+
+class SlidingText extends StatelessWidget {
+  const SlidingText({
+    super.key,
+    required this.slidingAnimation,
+  });
+
+  final Animation<Offset> slidingAnimation;
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedBuilder(
+      animation: slidingAnimation,
+      builder: (context, _) {
+        return SlideTransition(
+          position: slidingAnimation,
+          child: Text(
+            'Let\'s Communicate With Friends',
+            textAlign: TextAlign.center,
+            style: Styles.textStyle16,
+          ),
+        );
+      },
+    );
+  }
+}
